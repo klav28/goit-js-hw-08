@@ -21,15 +21,12 @@ function handleInput(event) {
 
 function handleSubmit(event) {
     event.preventDefault();
-
     const { email, message } = event.currentTarget.elements;
-
     console.log({ email: email.value, message: message.value });
-    
     event.currentTarget.reset();
     localStorage.removeItem("feedback-form-state");
 }
 
-formData.addEventListener("input", throttle(handleInput, 1500));
+formData.addEventListener("input", throttle(handleInput, 500));
 
 formData.addEventListener("submit", handleSubmit);
