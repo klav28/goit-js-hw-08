@@ -15,15 +15,15 @@ if (feedbackFormValues) {
 }
 
 function handleInput(event) {
-    const { email, message } = event.currentTarget.elements;
+    const { email, message } = formData.elements;
     localStorage.setItem("feedback-form-state", JSON.stringify({ email: email.value, message: message.value }));
 }
 
 function handleSubmit(event) {
     event.preventDefault();
-    const { email, message } = event.currentTarget.elements;
+    const { email, message } = formData.elements;
     console.log({ email: email.value, message: message.value });
-    event.currentTarget.reset();
+    formData.reset();
     localStorage.removeItem("feedback-form-state");
 }
 
