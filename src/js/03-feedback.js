@@ -14,13 +14,13 @@ if (feedbackFormValues) {
     }
 }
 
-function handleInput(event) {
+function handleInput() {
     const { email, message } = formData.elements;
     localStorage.setItem("feedback-form-state", JSON.stringify({ email: email.value, message: message.value }));
 }
 
-function handleSubmit(event) {
-    event.preventDefault();
+function handleSubmit(ev) {
+    ev.preventDefault();
     const { email, message } = formData.elements;
     console.log({ email: email.value, message: message.value });
     formData.reset();
